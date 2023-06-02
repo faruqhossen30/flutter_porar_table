@@ -4,6 +4,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_porar_table/const/colors.dart';
 import 'package:flutter_porar_table/const/image_path.dart';
 import 'package:flutter_porar_table/controller/auth_controller.dart';
+import 'package:flutter_porar_table/service/auth_service.dart';
 import 'package:flutter_porar_table/view/auth/register_screen.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:get/get.dart';
@@ -82,7 +83,9 @@ class LoginScreen extends StatelessWidget {
                 height: 15.h,
               ),
               InkWell(
-                onTap: () {},
+                onTap: () {
+                  AuthService().loginUser(mobile: fomatedMobile, password: passwordController.text);
+                },
                 child: Container(
                   height: 40.h,
                   width: double.infinity,
